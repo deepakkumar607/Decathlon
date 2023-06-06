@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Requests</title>
+</head>
+<body>
+    <h1>Change Requests</h1>
+    <table>
+        <tr>
+            <th>Ticket Number</th>
+            <th>Date</th>
+            <th>Old Email</th>
+            <th>New Email</th>
+            <th>Email Validated</th>
+            <th>Old Phone</th>
+            <th>New Phone</th>
+            <th>Phone Validated</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        <th:block th:each="request : ${changeRequests}">
+            <tr>
+                <td th:text="${request.ticketNumber}"></td>
+                <td th:text="${request.date}"></td>
+                <td th:text="${request.oldEmail}"></td>
+                <td th:text="${request.newEmail}"></td>
+                <td>
+                    <input type="checkbox" th:checked="${request.emailValidated}" disabled>
+                </td>
+                <td th:text="${request.oldPhone}"></td>
+                <td th:text="${request.newPhone}"></td>
+                <td>
+                    <input type="checkbox" th:checked="${request.phoneValidated}" disabled>
+                </td>
+                <td th:text="${request.reason}"></td>
+                <td th:text="${request.status}"></td>
+                <td>
+                    <form th:action="@{/admin/requests/accept/{id}(id=${request.id})}" method="post">
+                        <input type="text" name="reason" placeholder="Reason" required>
+                        <button type="submit">Accept</button>
+                    </form>
+                    <form th:action="@{/admin/requests/reject/{id}(id=${request.id})}" method="post">
+                        <input type="text" name="reason" placeholder="Reason" required>
+                        <button type="submit">Reject</button>
+                    </form>
+                    <script src="/js/script.js"></script>
+                </td>
+            </tr>
+        </th:block>
+    </table>
+</body>
+</html>

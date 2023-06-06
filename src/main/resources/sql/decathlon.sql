@@ -1,0 +1,15 @@
+CREATE TABLE decathlon (
+    id SERIAL PRIMARY KEY,
+    ticket_number VARCHAR(30),
+    date TIMESTAMP,
+    old_email VARCHAR(30),
+    new_email VARCHAR(30),
+    email_validated BOOLEAN,
+    old_phone VARCHAR(30),
+    new_phone VARCHAR(30),
+    phone_validated BOOLEAN,
+    reason VARCHAR(250),
+    status VARCHAR(30),
+    email_otp VARCHAR(30),
+    phone_otp  VARCHAR(30),
+);

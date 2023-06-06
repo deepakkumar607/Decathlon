@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Update</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Customer Update</h1>
+    <form action="/submit" method="post">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="reason">Reason for Change:</label>
+            <textarea id="reason" name="reason" rows="4" maxlength="250" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="emailOTP">Email OTP:</label>
+            <input type="text" id="emailOTP" name="emailOTP" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneOTP">Phone OTP:</label>
+            <input type="text" id="phoneOTP" name="phoneOTP" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="/js/script.js"></script>
+</body>
+</html>
